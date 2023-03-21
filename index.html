@@ -86,22 +86,26 @@
 	];
 	let currentIndex = 4; // defaults to trans
 
-	function randomizePride() {
+	function randomizePride()
+	{
 		let newIndex = currentIndex;
 		while (newIndex === currentIndex)
-			newIndex = (Math.random() * (flags.length - 1)).toFixed(0);
+			newIndex = Math.trunc((Math.random() * (flags.length - 1)));
+			
 		currentIndex = newIndex;
 
 		const colors = flags[newIndex];
-		for (let i = 0; i < colors.length; i++)
+		for (let i = 0; i < 6; i++)
 		{
-			document.documentElement.style.setProperty(`--pride-${i + 1}`, `#${colors[i]}`);
-			const prideElement = document.getElementById(`pride-${i + 1}`).style;
-			prideElement.setProperty('display', 'block');
-		}
-		
-		for (let i = colors.length + 1; i <= 6; i++)
-			document.getElementById(`pride-${i}`).style.setProperty('display', 'none');
+			if (i < colors.length)
+			{
+				document.documentElement.style.setProperty(`--pride-${i + 1}`, `#${colors[i]}`);
+				const prideElement = document.getElementById(`pride-${i + 1}`).style;
+				prideElement.setProperty('display', 'block');
+			}
+			else
+				document.getElementById(`pride-${i + 1}`).style.setProperty('display', 'none');
+		}	
 	}
 </script>
 </html>
