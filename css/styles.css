@@ -107,6 +107,7 @@ main {
 h2 {
 	text-align: left;
 	font-size: 15pt;
+	text-indent: -2em;
 }
 
 p {
