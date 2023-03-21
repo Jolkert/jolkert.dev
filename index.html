@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8" />
+	<title>Jolkert</title>
+	<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+	<link rel="stylesheet" href="https://fonts.bunny.net/css?family=fira-code:500,700">
+	<link rel="stylesheet" href="./css/styles.css" />
+</head>
+<body>
+	<nav>
+		<ul>
+			<li><a href="./links/links.html">links</a></li>
+			<li><a href="">about</a></li>
+		</ul>
+		
+	</nav>
+	<div id="pride" onclick="randomizePride()">
+		<div id="pride-1"></div>
+		<div id="pride-2"></div>
+		<div id="pride-3"></div>
+		<div id="pride-4"></div>
+		<div id="pride-5"></div>
+		<div id="pride-6"></div>
+	</div>
+	<main>
+		<h1 id="page-title"><span class="heart">&#10084;</span> Morgan "Jolkert" Bauer <span class="heart">&#10084;</span></h1>
+		<div id="page-subtitle" class="ipa">/'mɔɹ.gən 'jɔl.kɚt 'baʊ.ɚ/ </div>
+		<p>
+			Hi, I'm Morgan! If you've found this site, it's likely you know me better (if at all) as <em><abbr title="IPA: /'jɔl.kɚt/">Jolkert</abbr></em>.
+			I am a computer science student, amatuer software developer, and hobbyist linguist. I have many projects on <a href="https://github.com/jolkert">my GitHub</a>.
+			Some of which I'm proud of, some of which should never again see the light of day.
+		</p>
+
+		<h1>Things I've Worked On</h1>
+		<h2><span class="heart">&#10084;</span> <a href="https://github.com/Jolkert/Appalachia">Appalachia</a></h2>
+		<p>
+			Appalachia is a (currently Work-in-Progress) general-purpose discord bot.
+		</p>
+	</main>
+	<footer>
+		&copy; Morgan Bauer 2023
+	</footer>
+</body>
+
+<script> // there's definitely gotta be a cleaner way about this but this works lol
+	const flags = [
+		['e50000', 'ff8d00', 'ffee00', '008121', '004cff', '760188'], // rainbow
+		['d52d00', 'ff9a56', 'ffffff', 'd362a4', 'a30262'], // lesbian
+		['078d70', '98e8c1', 'ffffff', '7bade2', '3d1a78'], // gay men (yall we *really* need a separate word for this lmao)
+		['d60270', 'd60270', '9b4f96', '0038a8', '0038a8'], // bi
+		['5bcffa', 'f5abb9', 'ffffff', 'f5abb9', '5bcffa'], // trans
+		['000000', 'a3a3a3', 'ffffff', '800080'], // ace
+		['3da542', 'a7d379', 'ffffff', 'a9a9a9', '000000'], // aro 
+		['e28c00', 'eccd00', 'ffffff', '62aedc', '203856'], // aroace
+		['ff218c', 'ffd800', '21b1ff'], // pan
+		['fcf434', 'fcfcfc', '9c59d1', '2c2c2c'], // enby
+		['ff76a4', 'ffffff', 'c011d7', '000000', '2f3cbe'] // genderfluid
+	];
+	let currentIndex = 4; // defaults to trans
+
+	function randomizePride() {
+		let newIndex = currentIndex;
+		while (newIndex === currentIndex)
+			newIndex = (Math.random() * (flags.length - 1)).toFixed(0);
+		currentIndex = newIndex;
+
+		const colors = flags[newIndex];
+		for (let i = 0; i < colors.length; i++)
+		{
+			document.documentElement.style.setProperty(`--pride-${i + 1}`, `#${colors[i]}`);
+			const prideElement = document.getElementById(`pride-${i + 1}`).style;
+			prideElement.setProperty('display', 'block');
+		}
+		
+		for (let i = colors.length + 1; i <= 6; i++)
+			document.getElementById(`pride-${i}`).style.setProperty('display', 'none');
+	}
+</script>
+</html>

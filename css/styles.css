@@ -1,0 +1,129 @@
+/* color variables */
+:root {
+	--bg-color: #333333;
+	--text-color: #fff989;
+	--subtitle-color: #faf7c6;
+
+	--link-color: #dabedd;
+	--visited-color: #dabbed;
+
+	--nav-text-color: #ff89e9;
+	--nav-hover-bg: #a5a5a5;
+
+	/* pride colors (default: trans) */
+	--pride-1: #5bcffa;
+	--pride-2: #F5abb9;
+	--pride-3: #ffffff;
+	--pride-4: #F5abb9;
+	--pride-5: #5bcffa;
+	--pride-6: #000000;
+}
+
+/* global */
+body {
+	background-color: var(--bg-color);
+	color: var(--text-color);
+	font-family: 'Fira Code', monospace;
+	padding: 0;
+	margin: 0;
+}
+::selection {
+	background-color: var(--text-color);
+	color: var(--bg-color);
+}
+a {
+	color: var(--link-color);
+}
+
+/* pride flag*/
+#pride {
+	display: grid;
+	height: 2.5em;
+}
+#pride > * {
+	height: 1fr;
+	width: 100%;
+	/* transition: all 0.3s ease-in-out */
+}
+#pride-1 {
+	background-color: var(--pride-1);
+}
+#pride-2 {
+	background-color: var(--pride-2);
+}
+#pride-3 {
+	background-color: var(--pride-3);
+}
+#pride-4 {
+	background-color: var(--pride-4);
+}
+#pride-5 {
+	background-color: var(--pride-5);
+}
+#pride-6 {
+	background-color: var(--pride-6);
+	/* default is trans, so hide 6th */
+	display: none;
+}
+
+/* nav */
+nav ul {
+	list-style: none;
+	text-align: right;
+	color: var(--nav-text-color);
+	margin-right: 2em;
+}
+nav ul li {
+	display: inline;
+}
+nav ul li a {
+	text-decoration: none;
+	margin: .5em .5em;
+}
+nav ul li a:hover{
+	background-color: var(--nav-hover-bg);
+	transition: background-color .5s;
+}
+nav ul li a:visited {
+	color: var(--nav-text-color);
+}
+
+/* main content */
+main {
+	text-align: center;
+	max-width: 850px;
+	margin: auto;
+}
+h2 {
+	text-align: left;
+}
+
+p {
+	text-align: left;
+	text-indent: 1em;
+	padding-bottom: 2.5em;
+}
+
+/* footer */
+footer {
+	font-size: smaller;
+	text-align: center;
+	margin-top: 10em;
+}
+
+#page-title {
+	margin-bottom: .1em;
+}
+
+#page-subtitle {
+	color: var(--subtitle-color);
+	margin-bottom: 1.9em;
+}
+
+.ipa {
+	font-family: 'Courier New', Courier, monospace;
+	font-style: italic;
+}
+.heart {
+	color: #fcc3ec;
+}
