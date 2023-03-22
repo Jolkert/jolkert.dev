@@ -114,11 +114,19 @@ h2 {
 	font-size: 15pt;
 	text-indent: -2em;
 }
+h3 {
+	font-size: 15pt;
+	text-decoration: underline;
+}
 
 p {
 	text-align: left;
 	text-indent: 1em;
 	padding-bottom: 2.5em;
+}
+
+main ul {
+	text-align: start;
 }
 
 /* footer */
@@ -143,4 +151,13 @@ footer {
 }
 .heart {
 	color: #fcc3ec;
+}
+.center {
+	text-align: center;
+	text-indent: 0;
+}
+
+.contact-method {
+	color: #c1a5ff;
+	text-decoration: underline;
 }

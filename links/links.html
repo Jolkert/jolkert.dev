@@ -1,20 +1,49 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta charset="UTF-8">
+	<meta charset="UTF-8" />
 	<title>Jolkert: Links</title>
-	<!-- TODO: style sheet -->
+	<link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+	<link rel="stylesheet" href="https://fonts.bunny.net/css?family=fira-code:500,700">
+	<link rel="stylesheet" href="../css/styles.css" />
 </head>
 <body>
+	<h1 style="margin: auto; padding-top: .5em; text-align: center;">
+		Site Under Construction!
+	</h1>
 	<nav>
 		<ul>
-			<li><a href="./links/links.html">Links</a></li>
-			<li>test item</li>
-			<li>another test!</li>
+			<li class="nav-link"><a href="../index.html">home</a><span class="nav-path"> ./</span></li>
+			<li class="nav-link"><a href="../links/links.html">links</a><span class="nav-path"> ./links</span></li>
+			<li class="nav-link"><a href="../about/about.html">about</a><span class="nav-path"> ./about</span></li>
 		</ul>
+		
 	</nav>
-	<main>
-		<h1>&#10084; This is a test &#10084;</h1>
+	<div id="pride" onclick="randomizePride()">
+		<div id="pride-0"></div>
+		<div id="pride-1"></div>
+		<div id="pride-2"></div>
+		<div id="pride-3"></div>
+		<div id="pride-4"></div>
+		<div id="pride-5"></div>
+	</div>
+	<main> <!-- this page kinda ungly but it works for now -->
+		<h1 id="page-title"><span class="heart">&#10084;</span> My Links <span class="heart">&#10084;</span></h1>
+		<div id="page-subtitle"><i>Socials & where to contact me!</i></div>
+
+		<h3>Socials</h3>
+		<p class="center">
+			<a href="https://github.com/Jolkert">GitHub</a> • 
+			<a href="https://twitter.com/jolkertIX">Twitter</a>
+		</p>	
+		<h3>Other Contact</h3>
+		<div class="contact">
+			<div><span class="contact-method">Discord:</span> Jolkert#2991</div>
+			<div><span class="contact-method">Email:</span> jolkertt@gmail.com</div>
+		</div>
 	</main>
+	<footer>
+		&copy; Morgan Bauer 2023
+	</footer>
 </body>
 </html>
