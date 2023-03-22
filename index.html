@@ -8,23 +8,24 @@
 	<link rel="stylesheet" href="./css/styles.css" />
 </head>
 <body>
-	<h1 style="margin: auto; text-align: center;">
+	<h1 style="margin: auto; padding-top: .5em; text-align: center;">
 		Site Under Construction!
 	</h1>
 	<nav>
 		<ul>
-			<li><a href="./links/links.html">links</a></li>
-			<li><a href="">about</a></li>
+			<li class="nav-link"><a href="./index.html">home</a><span class="nav-path"> ./</span></li>
+			<li class="nav-link"><a href="./links/links.html">links</a><span class="nav-path"> ./links</span></li>
+			<li class="nav-link"><a href="./about/about.html">about</a><span class="nav-path"> ./about</span></li>
 		</ul>
 		
 	</nav>
 	<div id="pride" onclick="randomizePride()">
+		<div id="pride-0"></div>
 		<div id="pride-1"></div>
 		<div id="pride-2"></div>
 		<div id="pride-3"></div>
 		<div id="pride-4"></div>
 		<div id="pride-5"></div>
-		<div id="pride-6"></div>
 	</div>
 	<main>
 		<h1 id="page-title"><span class="heart">&#10084;</span> Morgan "Jolkert" Bauer <span class="heart">&#10084;</span></h1>
@@ -46,7 +47,7 @@
 
 		<h2><span class="heart">&#10084;</span> <a href="https://github.com/Jolkert/DiscordFabricLink">Discord Fabric Link</a><span class="path"> github/Jolkert/DiscordFabricLink</span></h2>
 		<p>
-			<u>Discord Fabric Link</u> is a minecraft mod that runs a Discord bot.
+			<u>Discord Fabric Link</u> is a Minecraft mod that runs a Discord bot.
 			It allows users to add themselves to a whitelist using a Discord command, and link their Minecraft account to their Discord user.
 			It shows the username color from Discord in Minecraft chat, and shows the Discord username and any pronoun roles on hover.
 			(It also includes a few server-side mechanics changes that are extraneous and should probably be part of a different mod).
@@ -99,12 +100,11 @@
 		{
 			if (i < colors.length)
 			{
-				document.documentElement.style.setProperty(`--pride-${i + 1}`, `#${colors[i]}`);
-				const prideElement = document.getElementById(`pride-${i + 1}`).style;
-				prideElement.setProperty('display', 'block');
+				document.documentElement.style.setProperty(`--pride-${i}`, `#${colors[i]}`);
+				document.getElementById(`pride-${i}`).style.setProperty('display', 'block');
 			}
 			else
-				document.getElementById(`pride-${i + 1}`).style.setProperty('display', 'none');
+				document.getElementById(`pride-${i}`).style.setProperty('display', 'none');
 		}	
 	}
 </script>

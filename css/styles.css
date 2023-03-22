@@ -4,18 +4,18 @@
 	--text-color: #fff989;
 	--subtitle-color: #faf7c6;
 
-	--link-color: #dabedd;
+	--link-color: #f098ea;
 
-	--nav-text-color: #ff89e9;
+	--nav-text-color: #ff89aa;
 	--nav-hover-bg: #a5a5a5;
 
 	/* pride colors (default: trans) */
-	--pride-1: #5bcffa;
-	--pride-2: #F5abb9;
-	--pride-3: #ffffff;
-	--pride-4: #F5abb9;
-	--pride-5: #5bcffa;
-	--pride-6: #000000;
+	--pride-0: #5bcffa;
+	--pride-1: #F5abb9;
+	--pride-2: #ffffff;
+	--pride-3: #F5abb9;
+	--pride-4: #5bcffa;
+	--pride-5: #000000;
 }
 
 /* global */
@@ -38,7 +38,7 @@ a:hover, a:hover + .path {
 	background-color: var(--link-color);
 	transition: background-color 0.5s;
 }
-.path {
+.path, .nav-path {
 	color: var(--bg-color);
 	font-style: italic;
 	height: 100%;
@@ -55,6 +55,9 @@ a:hover, a:hover + .path {
 	width: 100%;
 	/* transition: all 0.3s ease-in-out */
 }
+#pride-0 {
+	background-color: var(--pride-0);
+}
 #pride-1 {
 	background-color: var(--pride-1);
 }
@@ -69,34 +72,36 @@ a:hover, a:hover + .path {
 }
 #pride-5 {
 	background-color: var(--pride-5);
-}
-#pride-6 {
-	background-color: var(--pride-6);
 	/* default is trans, so hide 6th */
 	display: none;
 }
 
 /* nav */
 nav ul {
+	/* flexbox */
+	display: flex;
+	flex-direction: row;
+	justify-content: end;
+	gap: 1em;
+
 	list-style: none;
-	text-align: right;
+
+	margin: 1em 1.5em;
+}
+
+.nav-link a {
 	color: var(--nav-text-color);
-	margin-right: 2em;
-}
-nav ul li {
-	display: inline;
-}
-nav ul li a {
 	text-decoration: none;
-	margin: .5em .5em;
 }
-nav ul li a:hover{
-	background-color: var(--nav-hover-bg);
+.nav-link a:hover, .nav-link a:hover + .nav-path {
+	color: var(--bg-color) !important; /* TODO: please fix this it sucks so hard */
+	background-color: var(--nav-text-color);
 	transition: background-color .5s;
 }
-nav ul li a:visited {
+.nav-link a:visited {
 	color: var(--nav-text-color);
 }
+
 
 /* main content */
 main {
