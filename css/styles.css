@@ -1,5 +1,5 @@
 @media screen and (min-width: 1000px) {
-	h2 {
+	h2.heart-before {
 		text-indent: -3.5rem;
 	}
 }
@@ -39,6 +39,16 @@ a {
 	color: var(--link-color);
 }
 
+.path {
+	color: var(--link-color);
+}
+.path, .nav-path {
+	opacity: 0;
+	font-style: italic;
+	height: 100%;
+	padding-right: .2em;
+}
+
 main a:hover, a:hover + .path {
 	color: var(--bg-color);
 	background-color: var(--link-color);
@@ -48,17 +58,10 @@ main a:hover, a:hover + .path {
 		background-color var(--transition-timing);
 }
 
-.path, .nav-path {
-	opacity: 0;
-	font-style: italic;
-	height: 100%;
-	padding-right: .2em;
-}
-
 /* pride flag */
 #pride {
 	display: grid;
-	height: 2.5em;
+	height: 2.5rem;
 }
 #pride > div:nth-child(1) {
 	background-color: var(--pride-0);
@@ -84,13 +87,13 @@ main a:hover, a:hover + .path {
 /* nav */
 /* TODO: the nav annoys me endlessly because i committed to the fucking paths bit lol */
 .nav-bar {
-	list-style: none;
 	color: var(--nav-text-color);
 	font-size: 1.5rem;
+	list-style: none;
 
 	display: grid;
 	grid-template-columns: repeat(3, 20%);
-	grid-gap: 1em;
+	gap: 1em;
 
 	justify-content: center;
 	margin-block: 1rem;
