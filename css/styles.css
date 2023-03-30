@@ -1,13 +1,18 @@
-/* color variables */
+@media screen and (min-width: 1000px) {
+	h2 {
+		text-indent: -3.5rem;
+	}
+}
+
+/* variables */
 :root {
 	--bg-color: #333333;
 	--text-color: #fff989;
 	--subtitle-color: #faf7c6;
-
 	--link-color: #f098ea;
-
 	--nav-text-color: #ff89aa;
-	--nav-hover-bg: #a5a5a5;
+
+	--transition-timing: .5s;
 
 	/* pride colors (default: trans) */
 	--pride-0: #5bcffa;
@@ -23,9 +28,8 @@ body {
 	background-color: var(--bg-color);
 	color: var(--text-color);
 	font-family: 'Fira Code', monospace;
-	
-	padding: 0;
-	margin: 0;
+
+	margin: 0; /* keeps pride flag filling entire space */
 }
 ::selection {
 	background-color: var(--text-color);
@@ -34,13 +38,18 @@ body {
 a {
 	color: var(--link-color);
 }
-a:hover, a:hover + .path {
+
+main a:hover, a:hover + .path {
 	color: var(--bg-color);
 	background-color: var(--link-color);
-	transition: background-color 0.5s;
+	opacity: 100%;
+	transition:
+		color var(--transition-timing),
+		background-color var(--transition-timing);
 }
+
 .path, .nav-path {
-	color: var(--bg-color);
+	opacity: 0;
 	font-style: italic;
 	height: 100%;
 	padding-right: .2em;
@@ -51,58 +60,53 @@ a:hover, a:hover + .path {
 	display: grid;
 	height: 2.5em;
 }
-#pride > * {
-	height: 1fr;
-	width: 100%;
-	/* transition: all 0.3s ease-in-out */
-}
-#pride-0 {
+#pride > div:nth-child(1) {
 	background-color: var(--pride-0);
 }
-#pride-1 {
+#pride > div:nth-child(2) {
 	background-color: var(--pride-1);
 }
-#pride-2 {
+#pride > div:nth-child(3) {
 	background-color: var(--pride-2);
 }
-#pride-3 {
+#pride > div:nth-child(4) {
 	background-color: var(--pride-3);
 }
-#pride-4 {
+#pride > div:nth-child(5) {
 	background-color: var(--pride-4);
 }
-#pride-5 {
+#pride > div:nth-child(6) {
 	background-color: var(--pride-5);
 	/* default is trans, so hide 6th */
 	display: none;
 }
 
 /* nav */
+/* TODO: the nav annoys me endlessly because i committed to the fucking paths bit lol */
 .nav-bar {
-	/* flexbox */
-	display: flex;
-	flex-direction: row;
-	flex-wrap: wrap;
-	justify-content: end;
-	grid-template-columns: repeat(3, 1fr);
-	gap: 2em;
+	list-style: none;
+	color: var(--nav-text-color);
+	font-size: 1.5rem;
 
-	margin: 1em 1.5em;
-}
-.nav-link {
-	font-size: 20pt;
+	display: grid;
+	grid-template-columns: repeat(3, 20%);
+	grid-gap: 1em;
+
+	justify-content: center;
+	margin-block: 1rem;
 }
 .nav-link a {
-	color: var(--nav-text-color);
+	color: inherit;
 	text-decoration: none;
 }
+
 .nav-link a:hover, .nav-link a:hover + .nav-path {
-	color: var(--bg-color) !important; /* TODO: please fix this it sucks so hard */
+	color: var(--bg-color);
+	opacity: 100%;
 	background-color: var(--nav-text-color);
-	transition: background-color .5s;
-}
-.nav-link a:visited {
-	color: var(--nav-text-color);
+	transition:
+		color var(--transition-timing),
+		background-color var(--transition-timing);
 }
 
 /* main content */
@@ -113,47 +117,51 @@ main {
 }
 h2 {
 	text-align: left;
-	font-size: 15pt;
-	text-indent: -2em;
+	font-size: 1.3rem;
 }
 h3 {
-	font-size: 15pt;
+	font-size: 1.3rem;
 	text-decoration: underline;
 }
 
 p {
 	text-align: left;
-	text-indent: 1.5em;
-	padding-bottom: 2.5em;
-}
-
-main ul {
-	text-align: start;
+	text-indent: 2em;
+	margin-bottom: 2em;
 }
 
 /* footer */
 footer {
-	font-size: smaller;
+	font-size: .7rem;
+	background-color: var(--bg-color);
 	text-align: center;
-	margin: 5em 0em 1em;
+	margin-bottom: .6rem;
 }
 
-#page-title {
-	margin-bottom: .1em;
+.page-title {
+	margin-bottom: .1rem;
 }
 
-#page-subtitle {
+.page-subtitle {
 	color: var(--subtitle-color);
-	margin-bottom: 1.9em;
+	margin-bottom: 1.9rem;
 }
 
 .ipa {
 	font-family: 'Courier New', Courier, monospace;
 	font-style: italic;
 }
-.heart {
+
+/* i considered using margins instead of two different selectors with different spaces but i think it would prob look better inline like this -morgan 2023-03-30*/
+.heart-wrap::before, .heart-before::before {
+	content: '❤ ';
 	color: #fcc3ec;
 }
+.heart-wrap::after, .heart-after::after {
+	content: ' ❤';
+	color: #fcc3ec;
+}
+
 .center {
 	text-align: center;
 	text-indent: 0;

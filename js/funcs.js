@@ -16,9 +16,12 @@ const flags = [
 
 // TODO: this currently doesnt reset on page switch. figure that one out lol
 let currentIndex = 4; // defaults to trans
+let prideElement;
 
 function randomizePride()
 {
+	prideElement = document.getElementById('pride');
+
 	let newIndex = currentIndex;
 	while (newIndex === currentIndex)
 		newIndex = Math.trunc((Math.random() * (flags.length - 1)));
@@ -31,9 +34,9 @@ function randomizePride()
 		if (i < colors.length)
 		{
 			document.documentElement.style.setProperty(`--pride-${i}`, `#${colors[i]}`);
-			document.getElementById(`pride-${i}`).style.setProperty('display', 'block');
+			prideElement.children[i].style.setProperty('display', 'block');
 		}
 		else
-			document.getElementById(`pride-${i}`).style.setProperty('display', 'none');
+			prideElement.children[i].style.setProperty('display', 'none');
 	}	
 }
