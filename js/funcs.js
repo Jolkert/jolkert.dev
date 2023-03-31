@@ -14,10 +14,13 @@ const flags = [
 	['ff76a4', 'ffffff', 'c011d7', '000000', '2f3cbe'] // genderfluid
 ];
 
-// TODO: this currently doesnt reset on page switch. figure that one out lol
 let currentIndex = 4; // defaults to trans
 let prideElement;
 
+function initPride()
+{
+	currentIndex = 4;
+}
 function randomizePride()
 {
 	prideElement = document.getElementById('pride');
