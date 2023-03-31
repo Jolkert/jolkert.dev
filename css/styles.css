@@ -59,26 +59,26 @@ main a:hover, a:hover + .path {
 }
 
 /* pride flag */
-#pride {
+.pride {
 	display: grid;
 	height: 2.5rem;
 }
-#pride > div:nth-child(1) {
+.pride > div:nth-child(1) {
 	background-color: var(--pride-0);
 }
-#pride > div:nth-child(2) {
+.pride > div:nth-child(2) {
 	background-color: var(--pride-1);
 }
-#pride > div:nth-child(3) {
+.pride > div:nth-child(3) {
 	background-color: var(--pride-2);
 }
-#pride > div:nth-child(4) {
+.pride > div:nth-child(4) {
 	background-color: var(--pride-3);
 }
-#pride > div:nth-child(5) {
+.pride > div:nth-child(5) {
 	background-color: var(--pride-4);
 }
-#pride > div:nth-child(6) {
+.pride > div:nth-child(6) {
 	background-color: var(--pride-5);
 	/* default is trans, so hide 6th */
 	display: none;

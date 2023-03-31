@@ -13,33 +13,67 @@ const flags = [
 	['fcf434', 'fcfcfc', '9c59d1', '2c2c2c'], // enby
 	['ff76a4', 'ffffff', 'c011d7', '000000', '2f3cbe'] // genderfluid
 ];
+const flagMap = {
+	"rainbow": 0,
+	"lesbian": 1,
+	"gay_man": 2,
+	"bi": 3,
+	"trans": 4,
+	"ace": 5,
+	"aro": 6,
+	"aroace": 7,
+	"pan": 8,
+	"enby": 9,
+	"genderfluid": 10
+};
 
-let currentIndex = 4; // defaults to trans
-let prideElement;
+let prideElements
+let indexes;
 
 function initPride()
 {
-	currentIndex = 4;
+	prideElements = document.getElementsByClassName('pride');
+	indexes = [];
+	for (let i = 0; i < prideElements.length; i++)
+	{
+		let element = prideElements[i];
+		let initialFlag = element.getAttribute('initial-flag');
+		let initialFlagIndex = initialFlag ? flagMap[initialFlag] : 4; // default to trans cause pog
+	
+		indexes.push(initialFlagIndex);
+		setFlagColors(element, flags[initialFlagIndex]);
+	}
 }
+
 function randomizePride()
 {
-	prideElement = document.getElementById('pride');
+	if (!prideElements)
+		initPride();
 
-	let newIndex = currentIndex;
-	while (newIndex === currentIndex)
-		newIndex = Math.trunc((Math.random() * (flags.length - 1)));
-		
-	currentIndex = newIndex;
+	for (let i = 0; i < prideElements.length; i++)
+	{
+		let element = prideElements[i];
 
-	const colors = flags[newIndex];
-	for (let i = 0; i < 6; i++)
+		let oldIndex = indexes[i];
+		let newIndex = oldIndex;
+		while (newIndex === oldIndex) 
+			newIndex = Math.trunc((Math.random() * (flags.length - 1)));
+		indexes[i] = newIndex;
+
+		setFlagColors(element, flags[newIndex]);
+	}
+}
+
+function setFlagColors(element, colors)
+{
+	for (let i = 0; i < element.children.length; i++)
 	{
 		if (i < colors.length)
 		{
 			document.documentElement.style.setProperty(`--pride-${i}`, `#${colors[i]}`);
-			prideElement.children[i].style.setProperty('display', 'block');
+			element.children[i].style.setProperty('display', 'block');
 		}
 		else
-			prideElement.children[i].style.setProperty('display', 'none');
-	}	
+			element.children[i].style.setProperty('display', 'none')
+	}
 }
