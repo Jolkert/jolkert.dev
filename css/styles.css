@@ -138,7 +138,7 @@ footer {
 	font-size: .7rem;
 	background-color: var(--bg-color);
 	text-align: center;
-	margin-bottom: .6rem;
+	margin-block: 10rem .6rem;
 }
 
 .page-title {
@@ -168,6 +168,9 @@ footer {
 .center {
 	text-align: center;
 	text-indent: 0;
+}
+.center-children > * {
+	text-align: center;
 }
 
 .contact-method {
