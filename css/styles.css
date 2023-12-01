@@ -6,11 +6,12 @@
 
 /* variables */
 :root {
-	--bg-color: #333333;
-	--text-color: #fff989;
-	--subtitle-color: #faf7c6;
-	--link-color: #f098ea;
-	--nav-text-color: #ff89aa;
+	--bg-color: #24273a;
+	--text-color: #eed49f;
+	--subtitle-color: #f4dbd6;
+	--link-color: #f5bde6;
+	--nav-text-color: #ee99a0;
+	--heart-color: #c6a0f6;
 
 	--transition-timing: .5s;
 
@@ -158,11 +159,11 @@ footer {
 /* i considered using margins instead of two different selectors with different spaces but i think it would prob look better inline like this -morgan 2023-03-30*/
 .heart-wrap::before, .heart-before::before {
 	content: '❤ ';
-	color: #fcc3ec;
+	color: var(--heart-color);
 }
 .heart-wrap::after, .heart-after::after {
 	content: ' ❤';
-	color: #fcc3ec;
+	color: var(--heart-color);
 }
 
 .center {
