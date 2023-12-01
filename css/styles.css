@@ -12,6 +12,7 @@
 	--link-color: #f5bde6;
 	--nav-text-color: #ee99a0;
 	--heart-color: #c6a0f6;
+	--contact-color: #c6a0f6;
 
 	--transition-timing: .5s;
 
@@ -175,6 +176,5 @@ footer {
 }
 
 .contact-method {
-	color: #c1a5ff;
-	text-decoration: underline;
+	color: var(--contact-color);
 }
