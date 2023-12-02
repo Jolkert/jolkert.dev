@@ -13,6 +13,9 @@
 	--nav-text-color: #ee99a0;
 	--heart-color: #c6a0f6;
 	--contact-color: #c6a0f6;
+	--section-color: #c6a0f6;
+	--pronoun-color: #f0c6c6;
+	--ipa-color: #f4dbd6;
 
 	--transition-timing: .5s;
 
@@ -135,6 +138,15 @@ p {
 	margin-bottom: 2em;
 }
 
+p + ul {
+	margin-top: -1.5rem;
+	margin-left: 1.5rem;
+}
+
+li {
+	text-align: start;
+}
+
 /* footer */
 footer {
 	font-size: .7rem;
@@ -152,9 +164,20 @@ footer {
 	margin-bottom: 1.9rem;
 }
 
+.section {
+	color: var(--section-color);
+}
+
+.pronouns {
+	color: var(--pronoun-color);
+	font-size: .7em;
+	vertical-align: super;
+	font-style: italic;
+}
+
 .ipa {
 	font-family: 'Courier New', Courier, monospace;
-	font-style: italic;
+	color: var(--ipa-color);
 }
 
 /* i considered using margins instead of two different selectors with different spaces but i think it would prob look better inline like this -morgan 2023-03-30*/
